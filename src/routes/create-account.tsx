@@ -18,34 +18,63 @@ function CreateAccountPage() {
 
         <form className="space-y-6">
           <div>
-            <label className="mb-2 block text-sm">Full Name</label>
+            <label className="mb-2 block text-sm">
+              Full Name
+            </label>
             <input
-              className="w-full border border-border px-4 py-3 bg-transparent outline-none"
+              type="text"
+              className="w-full border border-border bg-transparent px-4 py-3 outline-none"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm">Email</label>
+            <label className="mb-2 block text-sm">
+              Email
+            </label>
             <input
               type="email"
-              className="w-full border border-border px-4 py-3 bg-transparent outline-none"
+              className="w-full border border-border bg-transparent px-4 py-3 outline-none"
               placeholder="Enter your email"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm">Password</label>
+            <label className="mb-2 block text-sm">
+              Password
+            </label>
             <input
               type="password"
-              className="w-full border border-border px-4 py-3 bg-transparent outline-none"
+              className="w-full border border-border bg-transparent px-4 py-3 outline-none"
               placeholder="Create a password"
             />
           </div>
 
+          <div>
+            <label className="mb-2 block text-sm">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              className="w-full border border-border bg-transparent px-4 py-3 outline-none"
+              placeholder="Confirm your password"
+            />
+          </div>
+
+          <label className="flex items-start gap-3 text-sm">
+            <input
+              type="checkbox"
+              className="mt-1"
+            />
+            <span>
+              Receive updates on new collections, launches,
+              and exclusive AEON releases.
+            </span>
+          </label>
+
           <button
             type="submit"
-            className="w-full bg-black py-4 text-sm uppercase tracking-[0.2em] text-white"
+            className="w-full bg-black py-4 text-sm uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
           >
             Create Account
           </button>
