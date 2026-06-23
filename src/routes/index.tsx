@@ -40,7 +40,6 @@ function Home() {
 
   return (
     <SiteLayout>
-      {/* HERO */}
       <section className="relative h-[88vh] min-h-[640px] w-full overflow-hidden">
         <img
           src={hero}
@@ -52,7 +51,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30" />
 
         <div className="relative mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 pb-20 lg:px-10 lg:pb-24">
-          <div className="max-w-2xl text-paper fade-in-up">
+          <div className="max-w-xl text-paper fade-in-up">
             <p className="eyebrow mb-6">Summer MMXXVI</p>
 
             <h1 className="font-display mb-6 text-5xl leading-[0.95] md:text-6xl lg:text-7xl">
@@ -64,34 +63,22 @@ function Home() {
               precise construction, and timeless silhouettes.
             </p>
 
-            <div className="flex gap-4">
-              <Link
-                to="/shop"
-                search={{ gender: "women" } as never}
-                className="btn-ink bg-paper text-ink border-paper hover:bg-transparent hover:text-paper"
-              >
-                Shop Women
-              </Link>
-
-              <Link
-                to="/shop"
-                search={{ gender: "men" } as never}
-                className="btn-ink bg-paper text-ink border-paper hover:bg-transparent hover:text-paper"
-              >
-                Shop Men
-              </Link>
-            </div>
+            <Link
+              to="/shop"
+              className="btn-ink bg-paper text-ink border-paper hover:bg-transparent hover:text-paper"
+            >
+              Discover
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* FEATURED */}
       <section className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="mb-12 flex items-end justify-between lg:mb-16">
           <div>
             <p className="eyebrow mb-3 text-muted-foreground">The Edit</p>
             <h2 className="font-display text-4xl lg:text-5xl">
-              Summer Essentials
+              Featured Collection
             </h2>
           </div>
 
@@ -110,13 +97,12 @@ function Home() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
       <section className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10 lg:pb-32">
         <div className="grid gap-6 lg:grid-cols-3">
           {[
-            { slug: "shirts", name: "Shirts", img: catKnit },
-            { slug: "trousers", name: "Trousers", img: catShoes },
             { slug: "bags", name: "Bags", img: catBags },
+            { slug: "knitwear", name: "Knitwear", img: catKnit },
+            { slug: "shoes", name: "Shoes", img: catShoes },
           ].map((c) => (
             <Link
               key={c.slug}
@@ -142,7 +128,6 @@ function Home() {
         </div>
       </section>
 
-      {/* STORY */}
       <section className="bg-secondary py-24 lg:py-32">
         <div className="mx-auto grid max-w-[1600px] items-center gap-16 px-6 lg:grid-cols-2 lg:px-10">
           <img
@@ -178,7 +163,6 @@ function Home() {
         </div>
       </section>
 
-      {/* BESTSELLERS */}
       <section className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="mb-12 flex items-end justify-between lg:mb-16">
           <div>
@@ -201,7 +185,6 @@ function Home() {
         </div>
       </section>
 
-      {/* NEW ARRIVALS */}
       <section className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10 lg:pb-32">
         <div className="mb-12 flex items-end justify-between lg:mb-16">
           <div>
