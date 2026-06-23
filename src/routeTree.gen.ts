@@ -12,6 +12,10 @@ import { Route as CreateAccountRouteImport } from './routes/create-account'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EssentialsRouteImport } from './routes/essentials'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as MenRouteImport } from './routes/men'
+import { Route as WomenRouteImport } from './routes/women'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -59,6 +63,30 @@ const ContactRoute = ContactRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
+const EssentialsRoute = EssentialsRouteImport.update({
+  id: '/essentials',
+  path: '/essentials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const MenRoute = MenRouteImport.update({
+  id: '/men',
+  path: '/men',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const WomenRoute = WomenRouteImport.update({
+  id: '/women',
+  path: '/women',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
 const ProductSlugRoute = ProductSlugRouteImport.update({
   id: '/product/$slug',
   path: '/product/$slug',
@@ -83,189 +111,7 @@ const WishlistRoute = WishlistRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
-export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/account': typeof AccountRoute
-  '/create-account': typeof CreateAccountRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/contact': typeof ContactRoute
-  '/product/$slug': typeof ProductSlugRoute
-  '/shop': typeof ShopRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/wishlist': typeof WishlistRoute
-}
-
-export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/account': typeof AccountRoute
-  '/create-account': typeof CreateAccountRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/contact': typeof ContactRoute
-  '/product/$slug': typeof ProductSlugRoute
-  '/shop': typeof ShopRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/wishlist': typeof WishlistRoute
-}
-
-export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/account': typeof AccountRoute
-  '/create-account': typeof CreateAccountRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/contact': typeof ContactRoute
-  '/product/$slug': typeof ProductSlugRoute
-  '/shop': typeof ShopRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/wishlist': typeof WishlistRoute
-}
-
-export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/account'
-    | '/create-account'
-    | '/cart'
-    | '/checkout'
-    | '/contact'
-    | '/product/$slug'
-    | '/shop'
-    | '/sitemap.xml'
-    | '/wishlist'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/account'
-    | '/create-account'
-    | '/cart'
-    | '/checkout'
-    | '/contact'
-    | '/product/$slug'
-    | '/shop'
-    | '/sitemap.xml'
-    | '/wishlist'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/account'
-    | '/create-account'
-    | '/cart'
-    | '/checkout'
-    | '/contact'
-    | '/product/$slug'
-    | '/shop'
-    | '/sitemap.xml'
-    | '/wishlist'
-  fileRoutesById: FileRoutesById
-}
-
-export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  AccountRoute: typeof AccountRoute
-  CreateAccountRoute: typeof CreateAccountRoute
-  CartRoute: typeof CartRoute
-  CheckoutRoute: typeof CheckoutRoute
-  ContactRoute: typeof ContactRoute
-  ProductSlugRoute: typeof ProductSlugRoute
-  ShopRoute: typeof ShopRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  WishlistRoute: typeof WishlistRoute
-}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/account': {
-      id: '/account'
-      path: '/account'
-      fullPath: '/account'
-      preLoaderRoute: typeof AccountRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/create-account': {
-      id: '/create-account'
-      path: '/create-account'
-      fullPath: '/create-account'
-      preLoaderRoute: typeof CreateAccountRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cart': {
-      id: '/cart'
-      path: '/cart'
-      fullPath: '/cart'
-      preLoaderRoute: typeof CartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/checkout': {
-      id: '/checkout'
-      path: '/checkout'
-      fullPath: '/checkout'
-      preLoaderRoute: typeof CheckoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/product/$slug': {
-      id: '/product/$slug'
-      path: '/product/$slug'
-      fullPath: '/product/$slug'
-      preLoaderRoute: typeof ProductSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shop': {
-      id: '/shop'
-      path: '/shop'
-      fullPath: '/shop'
-      preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/wishlist': {
-      id: '/wishlist'
-      path: '/wishlist'
-      fullPath: '/wishlist'
-      preLoaderRoute: typeof WishlistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
-}
-
-const rootRouteChildren: RootRouteChildren = {
+const rootRouteChildren = {
   IndexRoute,
   AboutRoute,
   AccountRoute,
@@ -273,6 +119,10 @@ const rootRouteChildren: RootRouteChildren = {
   CartRoute,
   CheckoutRoute,
   ContactRoute,
+  EssentialsRoute,
+  JournalRoute,
+  MenRoute,
+  WomenRoute,
   ProductSlugRoute,
   ShopRoute,
   SitemapDotxmlRoute,
@@ -281,4 +131,4 @@ const rootRouteChildren: RootRouteChildren = {
 
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<any>()
