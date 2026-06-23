@@ -87,4 +87,3 @@ return ( <main className="relative min-h-screen bg-paper px-6 py-24">
 
 );
 }
-
