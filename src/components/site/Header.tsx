@@ -1,7 +1,7 @@
+```tsx
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
-import { categories } from "@/lib/products";
 import {
   Search,
   ShoppingBag,
@@ -19,25 +19,18 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-border">
       <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
         <div className="grid grid-cols-3 items-center h-16 lg:h-20">
-          {/* Desktop Navigation */}
+          {/* Desktop Left */}
           <nav className="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase">
-            <Link to="/shop" className="editorial-link">
-              Shop
+            <Link to="/women" className="editorial-link">
+              Women
             </Link>
 
-            {categories.slice(0, 3).map((c) => (
-              <Link
-                key={c.slug}
-                to="/shop"
-                search={{ category: c.slug } as never}
-                className="editorial-link"
-              >
-                {c.name}
-              </Link>
-            ))}
+            <Link to="/men" className="editorial-link">
+              Men
+            </Link>
 
-            <Link to="/about" className="editorial-link">
-              About
+            <Link to="/essentials" className="editorial-link">
+              Essentials
             </Link>
           </nav>
 
@@ -58,8 +51,18 @@ export function Header() {
             AEON
           </Link>
 
-          {/* Right Icons */}
+          {/* Desktop Right + Icons */}
           <div className="flex items-center justify-end gap-4 lg:gap-6">
+            <div className="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase">
+              <Link to="/journal" className="editorial-link">
+                Journal
+              </Link>
+
+              <Link to="/about" className="editorial-link">
+                About
+              </Link>
+            </div>
+
             <Link
               to="/shop"
               aria-label="Search"
@@ -119,22 +122,27 @@ export function Header() {
           </div>
 
           <nav className="flex-1 flex flex-col gap-8 p-10 text-2xl font-display">
-            <Link to="/shop" onClick={() => setOpen(false)}>
-              Shop All
+            <Link to="/women" onClick={() => setOpen(false)}>
+              Women
             </Link>
 
-            {categories.map((c) => (
-              <Link
-                key={c.slug}
-                to="/shop"
-                search={{ category: c.slug } as never}
-                onClick={() => setOpen(false)}
-              >
-                {c.name}
-              </Link>
-            ))}
+            <Link to="/men" onClick={() => setOpen(false)}>
+              Men
+            </Link>
+
+            <Link to="/essentials" onClick={() => setOpen(false)}>
+              Essentials
+            </Link>
 
             <div className="h-px bg-border my-2" />
+
+            <Link
+              to="/journal"
+              onClick={() => setOpen(false)}
+              className="text-base eyebrow"
+            >
+              Journal
+            </Link>
 
             <Link
               to="/about"
@@ -142,22 +150,6 @@ export function Header() {
               className="text-base eyebrow"
             >
               About
-            </Link>
-
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="text-base eyebrow"
-            >
-              Contact
-            </Link>
-
-            <Link
-              to="/wishlist"
-              onClick={() => setOpen(false)}
-              className="text-base eyebrow"
-            >
-              Wishlist
             </Link>
 
             <Link
@@ -173,3 +165,5 @@ export function Header() {
     </header>
   );
 }
+```
+
