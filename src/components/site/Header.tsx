@@ -1,4 +1,3 @@
-```tsx
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
