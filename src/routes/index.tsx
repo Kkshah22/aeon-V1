@@ -209,5 +209,4 @@ function Home() {
     </SiteLayout>
   );
 }
-  );
-}
+
