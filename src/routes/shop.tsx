@@ -155,7 +155,7 @@ function SelectChip({
   options: { value: string; label: string }[];
 }) {
   return (
-    <label className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em]">
+    <label className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.12em]">
       <span className="text-muted-foreground">{label}</span>
       <select
         value={value}
