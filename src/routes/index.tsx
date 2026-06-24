@@ -54,7 +54,7 @@ function Home() {
             <p className="eyebrow mb-6">Summer MMXXVI</p>
 
             <h1 className="font-display mb-6 text-5xl leading-[0.95] md:text-6xl lg:text-7xl">
-              A wardrobe reduced to what matters.
+              Hello from Codex
             </h1>
 
             <p className="mb-8 max-w-md text-base leading-relaxed text-paper/80">
