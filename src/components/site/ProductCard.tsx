@@ -47,8 +47,8 @@ export function ProductCard({ product, eager = false }: { product: Product; eage
         )}
       </div>
       <Link to="/product/$slug" params={{ slug: product.slug }} className="block">
-        <h3 className="text-sm font-medium tracking-wide">{product.name}</h3>
-        <p className="text-sm text-muted-foreground mt-1">{formatPrice(product.priceCents)}</p>
+        <h3 className="font-sans text-[0.9375rem] font-medium leading-snug tracking-normal">{product.name}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{formatPrice(product.priceCents)}</p>
       </Link>
     </article>
   );
